@@ -3,7 +3,7 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS, cross_origin
 import pandas as pd
 import os
@@ -15,12 +15,6 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 
 
-# DB_HOST = "localhost"
-# DB_NAME = "crashes_db"
-# DB_USER = "postgres"
-# DB_PASS = "S2up45p2!"
-
-# engine = create_engine('postgresql://postgres:S2up45p2!@localhost/crashes_db')
 
 DATABASE_URL = os.environ["DATABASE_URL"]
 engine = create_engine(DATABASE_URL)
@@ -40,16 +34,24 @@ inspector.get_table_names()
 # Flask Routes
 #################################################
 
+#web-frontend routes
 @app.route("/")
-def welcome():
-    """List all available api routes."""
-    return (
-        f"Available Routes:<br/></br>"
-        f"Crash Counts By Borough: /crashcount</br>"
-        f"Injury Summary: /injuries</br>"
-        
-    )
+def index():
+    return render_template('index.html')
 
+@app.route("/visualizations")
+def visualizations():
+    return render_template('visualizations.html')
+
+@app.route("/ml")
+def ml():
+    return render_template('ml.html')
+
+@app.route("/april_table")
+def april_table():
+    return render_template('AprilTable.html')
+
+#api routes
 @app.route("/crashcount")
 def crashcount():
     # Create our session (link) from Python to the DB

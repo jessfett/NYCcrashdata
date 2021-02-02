@@ -106,7 +106,7 @@ del crash_impact['collisionid']
 
 crashimpact = crash_impact.reset_index()
 
-# crashimpact.to_csv("Data/CrashImpacts.csv", index=False, header=True)
+#crashimpact.to_csv("ETL/Data/CrashImpacts.csv", index=False, header=True)
 
 # sqlalchemy will not detect table without PK. This seems to be the best solution (https://stackoverflow.com/q/50469391)
 crashcount.to_sql("crash_count", engine, if_exists='replace') 

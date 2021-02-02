@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Deeper Learning - NYC Motor Vehicle Crashes</title>
+  <title>An Analysis of NYC Motor Vehicle Crashes</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   
 
@@ -17,7 +17,7 @@
 <!--BootStrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="style.css">
-  <!--CSS-->
+<!--CSS-->
   <script src="static/css/css.js"></script>
 <!-- AmCharts -->
   <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
@@ -65,7 +65,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script><!--Web Apps JS-->
   <script src="static/js/button.js"></script>
   <script src="static/js/event.js"></script>
-  <script src="static/js/areachart.js"></script>
+  <script src="static/js/pie.js"></script>
   <script src="static/js/map.js"></script> 
   <script type="text/javascript" src="static/js/config.js"></script>
 
@@ -83,14 +83,14 @@
           <span class="icon-bar"></span>
         </button>
         <div class="col-xs-9 phone-nav">
-          <a class="navbar-brand" href="index.html" id="logo">Home</a>
+          <a class="navbar-brand" href="index" id="logo">Home</a>
         </div>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right navbar-right-custom">
-          <li><a href="visualizations.html">Visualizations</a></li>
-          <li><a href="ml.html">Predictive Analysis</a></li>
-          <li><a href="AprilTable.html">Data Source</a></li>
+          <li><a href="visualizations">Visualizations</a></li>
+          <li><a href="ml">Predictive Analysis</a></li>
+          <li><a href="april_table">Data Source</a></li>
         </ul>
       </div>
     </div>
@@ -104,60 +104,31 @@
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <h1>NYC Motor Vehicle Crashes:</h1>
-        <h2>Predictive Analysis</h2><br>
-        <p>With the use of machine learning, the given dataset was used to forecast the likely borough of a crash and the riskiest hour to drive in NYC.</p>
+        <h2>An Analysis</h2>
+        <p>This web page is dedicated to a visualized study of the motor vehicle crashes that occured in New York City during the month April 2020. <br>
+      </p>
       </div>
     </div>
   </div>
+
+<a class="btn btn-primary" href="visualizations" role="button">Visualizations</a>
+<a class="btn btn-primary" href="ml" role="button">Predictive Analysis</a>
+<a class="btn btn-primary" href="april_table" role="button">Data Source</a>
 <br><br>
-
-<div class = "page-header">
-    <h3>
-       Linear Regression<br>
-       <small>Comparing the Frequency of Accidents to the Hour of Accidents.</small>
-    </h3>
-
- 
- <p>lakjdf;laksjdf;lksajf;lkasjdf ;klsj</p>
-<img src="images/scatter-lr.png" alt="Scatter Plot" style = "width:40%">
-
-<img src="images/scatter-lr2.png" alt="Linear Regression" style = "width:40%">
- </div>
-
-
-<!--KNN-->
-<div class = "page-header">
-    <h3>
-       K Nearest Neighbor<br>
-       <small>Key features were utilized to predict the borough based off of accident features.</small>
-    </h3>
-
- 
- <p>lakjdf;laksjdf;lksajf;lkasjdf ;klsj</p>
-<img src="images/knn.png" alt="Scatter Plot" style = "width:40%">
-
-<img src="" alt="Linear Regression" style = "width:40%">
- </div>
-
-<!--Decision Tree-->
-<div class = "page-header">
-    <h3>
-       Random Forest Classification & Decision Tree<br>
-       <small>Utilized important features (Borough, Persons Injured, and Hour) to determine the liklihood of a fatality.</small>
-    </h3>
-
- 
- <p>lakjdf;laksjdf;lksajf;lkasjdf ;klsj</p>
-<img src="images/features.png" alt="Features Importance" style = "width:40%">
-
-<img src="images/decision_tree2.png" alt="Decision Tree" style = "width:100%">
- </div>
-
-
-
-
+<!--Image-->
+<div class="row">
+  <div class="col-md-12">
+    <div class="thumbnail">
+        <img src="../static/images/nyc.jpeg" alt="NYC Traffic" style="width:100%">
+  </div>
+</div>
+</div>
+<span>Photo by <a href="https://unsplash.com/@tatavo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Luiz Guimaraes</a> on <a href="https://unsplash.com/s/photos/nyc-traffic?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 </center>
+
 </body>
+
+
 
 </html>
 

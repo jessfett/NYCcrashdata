@@ -1,4 +1,4 @@
-d3.csv("../ETL/Data/CrashImpacts.csv").then(function(crashImpacts) {
+d3.csv("../../ETL/Data/CrashImpacts.csv").then(function(crashImpacts) {
 
 
   
