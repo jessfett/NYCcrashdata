@@ -3,7 +3,6 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func, inspect
-import requests
 from flask import Flask, jsonify
 from flask_cors import CORS, cross_origin
 import pandas as pd
