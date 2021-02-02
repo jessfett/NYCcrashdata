@@ -16,22 +16,20 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 
 
-DB_HOST = "localhost"
-DB_NAME = "crashes_db"
-DB_USER = "postgres"
-DB_PASS = "S2up45p2!"
+# DB_HOST = "localhost"
+# DB_NAME = "crashes_db"
+# DB_USER = "postgres"
+# DB_PASS = "S2up45p2!"
 
-engine = create_engine('postgresql://postgres:S2up45p2!@localhost/crashes_db')
+# engine = create_engine('postgresql://postgres:S2up45p2!@localhost/crashes_db')
 
-
-
-# DATABASE_URL = os.environ["DATABASE_URL"]
-#engine = create_engine(DB_URL)
+DATABASE_URL = os.environ["DATABASE_URL"]
+engine = create_engine(DATABASE_URL)
 
 #Reflect database into ORM class
 Base=automap_base()
 Base.prepare(engine, reflect=True)
-Info =Base.classes.crashes_2020
+# Info=Base.classes.crashes_2020
 
 
 # Use the Inspector to explore the database and print the table names
@@ -49,7 +47,6 @@ def welcome():
     return (
         f"Available Routes:<br/></br>"
         f"Crash Counts By Borough: /crashcount</br>"
-        f"All Crashes Info: /crashinfo</br>"
         f"Injury Summary: /injuries</br>"
         
     )
@@ -76,50 +73,6 @@ def crashcount():
     return jsonify({'borough': borough, 'crashcounts': crash_count})
 
 
-
-@app.route("/crashinfo")
-def crashinfo():
-    # Create our session (link) from Python to the DB
-    session = Session(engine)
-    crashinforesults = engine.execute('SELECT * FROM "crashes_2020" LIMIT 10;')
-
-
-
-
-    crashdate = []
-    borough_info = []
-    latitude = []
-    longitude = []
-    contributing_factor =[]
-    crashid = []
-    vehicle_type =[]
-
-    for crash in crashinforesults:
-        date = crash.crashdate
-        crashdate.append(date)
-
-        boroughname = crash.borough
-        borough_info.append(boroughname)
-
-        lat=crash.latitude    
-        latitude.append(float(lat))
-
-        lng = crash.longitude
-        longitude.append(float(lng))
-
-        factor = crash.contributingfactor
-        contributing_factor.append(factor)
-
-        crash_id = crash.collisionid
-        crashid.append(crash_id)
-
-        crash_vehicle = crash.vehicletype
-        vehicle_type.append(crash_vehicle)
-
-    session.close()
-
-    return jsonify({'crash date': crashdate, 'borough': borough_info, 'latitude': latitude, 'longitude': longitude, 'Contributing Factor': contributing_factor, 'Collision ID': crashid, 'Vehicle Type': vehicle_type})
-
 @app.route("/injuries")
 def injuries():
     # Create our session (link) from Python to the DB
@@ -140,7 +93,7 @@ def injuries():
         Borough = impact.borough
         impactborough.append(Borough)
 
-        per_injured = impact.peronsinjured
+        per_injured = impact.personsinjured
         persons_injured.append(float(per_injured))
 
         per_killed=impact.personskilled    
