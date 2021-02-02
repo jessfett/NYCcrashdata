@@ -89,7 +89,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right navbar-right-custom">
           <li><a href="visualizations.html">Visualizations</a></li>
-          <li><a href="ml.html">Machine Learning</a></li>
+          <li><a href="ml.html">Predictive Analysis</a></li>
           <li><a href="AprilTable.html">Data Source</a></li>
         </ul>
       </div>
@@ -103,43 +103,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>NYC Motor Vehicle Crash Dashboard</h1>
-        <p>A collection of motor vehicle crashes that occured during April 2020 in New York City.</p>
+        <h1>NYC Motor Vehicle Crashes:</h1>
+        <h2>Predictive Analysis</h2><br>
+        <p>With the use of machine learning, the given dataset was used to forecast the likely borough of a crash and the riskiest hour to drive in NYC.</p>
       </div>
     </div>
   </div>
 
   
- <div class="row">
-      <div class="col-md-12">
-        <div class="well">
-          <h2>Crashes Total & Injury Total by Borough</h2>
-          <h5>The chart below highlights the total value of crashes and injuries as well as the value per 100,000 in each borough. Select the buttons below to filter the data. </h5>
-          <br>
-          <button id="0" type="button" >Raw Data</button>
-          <button id="1" type="button" >Per 100,000</button>
-          <br><br>
-          <!--Chart Section-->
-          <canvas id="forecast" width="300" height="150"></canvas>
-          <br><br><br>
-      </div>
-
-<!--Pie Chart Section-->
-<h2>Breakdown of Injuries</h2>
-<h5>Select a borough below to show a breakdown of the injuries by motorist, pedestrian, and cyclist</h5>
-<div id="chartdiv1" style="width: 800px; height: 600px;"></div>
-
-<!--Map Frame Section-->
- <h2>Location of Crashes - April 2020</h2>    
- <h5>Borough Color Represents Desity of Crashes in NYC April 2020</h5> 
-
-
-<!--FRAMED MAP INFORMATION-->
-<script src="static/js/map.js"></script>
-  <div id="map" style="width: 800px; height: 600px;"></div>
-     
-    </div>
-  </div>
 </center>
 </body>
 

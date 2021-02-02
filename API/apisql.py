@@ -16,10 +16,17 @@ app = Flask(__name__)
 CORS(app, support_credentials=True)
 
 
+DB_HOST = "localhost"
+DB_NAME = "crashes_db"
+DB_USER = "postgres"
+DB_PASS = "S2up45p2!"
+
+engine = create_engine('postgresql://postgres:S2up45p2!@localhost/crashes_db')
 
 
-DATABASE_URL = os.environ["DATABASE_URL"]
-engine = create_engine(DATABASE_URL)
+
+# DATABASE_URL = os.environ["DATABASE_URL"]
+#engine = create_engine(DB_URL)
 
 #Reflect database into ORM class
 Base=automap_base()
