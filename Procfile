@@ -1,3 +1,3 @@
 release: python ETL/etl.py
-web: gunicorn apisql:app 
+web: gunicorn apisql:app
 
