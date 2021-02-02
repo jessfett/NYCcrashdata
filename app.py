@@ -49,7 +49,7 @@ def ml():
 
 @app.route("/april_table")
 def april_table():
-    return render_template('AprilTable.html')
+    return render_template('april_table.html')
 
 #api routes
 @app.route("/crashcount")
