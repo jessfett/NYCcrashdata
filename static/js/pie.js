@@ -1,36 +1,10 @@
-d3.csv("../../ETL/Data/CrashImpacts.csv").then(function(crashImpacts) {
-
-
-  
-  
-    // Cast the hours value to a number for each piece of tvData
-    crashImpacts.forEach(function(d) {
-      d.PersonsInjured = +d.PersonsInjured;
-      d.PersonsKilled = +d.PersonsKilled;
-      d.PedestriansInjured = +d.PedestriansInjured;
-      d.PedestriansKilled = +d.PedestriansKilled;
-      d.CyclistInjured = +d.CyclistInjured;
-      d.CyclistKilled = +d.CyclistKilled;
-      d.MotoristInjured = +d.MotoristInjured;
-      d.MotoristKilled = +d.MotoristKilled;
-   
-      var boroughlist= crashImpacts.map(d=>d.Borough) 
-      var personsinjuredlist = crashImpacts.map(d=>d.PersonsInjured)
-        var personskilledlist = crashImpacts.map(d=>d.PersonsKilled)
-        var pedestriansinjuredlist = crashImpacts.map(d=>d.PedestriansInjured)
-        var pedestrianskilledlist = crashImpacts.map(d=>d.PedestriansKilled)
-        var cyclistinjuredlist = crashImpacts.map(d=>d.CyclistInjured)
-        var cyclistkilledlist = crashImpacts.map(d=>d.CyclistKilled)
-        var motoristinjuredlist = crashImpacts.map(d=>d.MotoristInjured)
-        var motoristkilledlist = crashImpacts.map(d=>d.MotoristKilled)
-  
 am4core.ready(function() {
 
 // Themes begin
 am4core.useTheme(am4themes_animated);
 // Themes end
 
-var container = am4core.create("chartdiv1", am4core.Container);
+var container = am4core.create("charts", am4core.Container);
 container.width = am4core.percent(100);
 container.height = am4core.percent(100);
 container.layout = "horizontal";
@@ -166,7 +140,3 @@ var chart = container.createChild(am4charts.PieChart);
     
     
     });
-
-})
-
-})
