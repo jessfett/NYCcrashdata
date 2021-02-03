@@ -13,18 +13,13 @@ import os
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
-
-
 DATABASE_URL = os.environ["DATABASE_URL"]
 engine = create_engine(DATABASE_URL)
 
 #Reflect database into ORM class
 Base=automap_base()
 Base.prepare(engine, reflect=True)
-# Info=Base.classes.crashes_2020
 
-
-# Use the Inspector to explore the database and print the table names
 inspector = inspect(engine)
 inspector.get_table_names()
 
