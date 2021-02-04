@@ -61,3 +61,6 @@ Analyze the NYC Motor Vehicle Crashes for April of 2020. After completing the ET
 
 ## Heroku Deployment
 [NYC Motor Vehicle Data: An Analysis](https://nyc-crashdata-2020.herokuapp.com/)
+
+## Presentation
+[Presentation](https://docs.google.com/presentation/d/1bIiPudrN-VoYUcMg5MpSYgBYjmHrwSVUWzxv0OJRc5o/edit?usp=sharing)
